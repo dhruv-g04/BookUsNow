@@ -1,0 +1,44 @@
+/* EventCard.css */
+.event-card {
+  margin: 0 10px;
+  position: relative;
+  width: 100%;
+  /* background-color: blueviolet; */
+}
+
+.event-card img {
+  width: 18rem;
+  height: 24rem;
+  border-radius: 3%;
+}
+
+.event-details {
+  display: flex;
+  justify-content: space-evenly;
+  font-size: 0.7rem;
+  color:  #ffffff;
+  position: absolute; 
+  bottom: 0;
+  /* border: 1px solid ; */
+  background-color: black;
+  width: 18rem;
+  overflow:scroll;
+  /* color: #989090; */
+  /* color: white; */
+}
+.event-name {
+  margin-bottom: -0.1rem;
+  font-size: 0.8rem;
+  font-weight: bold;
+  /* font-size: 1rem; */
+}
+
+.event-info-right{
+  padding-top: 0.2rem;
+  padding-right: 0.5rem;
+  text-align: right;
+}
+.event-info-left{
+  padding-left: 0.5rem;
+  text-align: left;
+}

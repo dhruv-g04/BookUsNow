@@ -1,0 +1,20 @@
+.recommended-events{
+    /* background-color: aqua; */
+    transform: translate(0, -250px);
+}
+
+.recommended-events h4{
+    color: white;
+    font-size: 30px;
+    font-family: 'Inter', sans-serif;
+}
+
+.box{
+    margin: 3rem;
+}
+
+.arrow{
+    /* background-color: aqua; */
+    position: relative;
+    top: 0.3rem;
+}

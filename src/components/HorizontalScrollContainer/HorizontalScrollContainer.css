@@ -1,0 +1,10 @@
+/* HorizontalScrollContainer.css */
+.horizontal-scroll-container {
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+  
+  .scroll-content {
+    display: inline-flex;
+  }
+  

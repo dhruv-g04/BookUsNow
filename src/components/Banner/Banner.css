@@ -1,0 +1,42 @@
+.banner {
+    position: relative;
+    width: 100%;
+}
+
+.banner img {
+    width: 100%;
+    height: auto;
+}
+
+.overlay {
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -80%);
+    text-align: center;
+    color: white;
+    /* padding: 20px; */
+    /* color: #989090; */
+    font-family: 'Inter', sans-serif;
+}
+
+.overlay h1 {
+    font-size: 4rem;
+    margin-bottom: 10px;
+}
+.overlay p {
+    font-size: 0.9rem;
+    padding-left: 17rem;
+    padding-right: 17rem;
+}
+/* 
+.overlay h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+} */
+
+.overlay p {
+    font-size: 14px;
+    margin-bottom: 10px;
+}
