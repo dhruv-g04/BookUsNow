@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import EventCard from './components/EventCard/EventCard';
+import EventCard from './components/RecommendedEventCard/EventCard';
 import EventList from './components/EventList/EventList';
 import HorizontalScrollContainer from './components/HorizontalScrollContainer/HorizontalScrollContainer';
 import LoadingSpinner from './components/LoadingSpinner/LoadingSpinner';
@@ -52,23 +52,24 @@ function App() {
             return [];
         }
     };
-
+    // console.log(upcomingEvents);
     return (
         <div className="app">
             <NavBar />
             <Banner />
             <div className='box'>
                 <div className='recommended-events'>
-                    <h4>Recommended Events <span className="arrow"><IoIosArrowRoundForward/></span></h4>
+                    <h4>Recommended Events <span className="arrow"><IoIosArrowRoundForward /></span></h4>
                     <HorizontalScrollContainer>
                         {recommendedEvents.map(event => (
                             <EventCard key={event.eventName} event={event} />
                         ))}
                     </HorizontalScrollContainer>
                 </div>
-                <h1>Upcoming Events</h1>
-                <EventList events={upcomingEvents} />
-
+                <div className='upcoming-events'>
+                    <h4>Upcoming Events<span className="arrow"><IoIosArrowRoundForward /></span></h4>
+                    <EventList events={upcomingEvents} />
+                </div>
                 {loading && <LoadingSpinner />}
             </div>
         </div>

@@ -1,6 +1,6 @@
 import React from 'react';
 import './EventList.css';
-import EventCard from '../EventCard/EventCard';
+import UpcomingEventCard from '../UpcomingEventCard/UpcomingEventCard';
 
 const EventList = ({ events }) => {
   // Check if events is not null or undefined, and if events is an array
@@ -11,7 +11,7 @@ const EventList = ({ events }) => {
   return (
     <div className="event-list">
       {events.map(event => (
-        <EventCard key={event.eventName} event={event} />
+        <UpcomingEventCard key={event.eventName} event={event} />
       ))}
     </div>
   );

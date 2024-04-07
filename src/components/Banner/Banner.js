@@ -4,7 +4,7 @@ import './Banner.css';
 const Banner = () => {
     return (
         <div className="banner">
-            <img src="/Banner.svg" alt="Banner" />
+            {/* <img src="/Banner.svg" alt="Banner" /> */}
             <div className="overlay">
                 <h1>Discover Exciting Events Happening</h1>
                 <h1>Near You - Stay Tuned for Updates!</h1>

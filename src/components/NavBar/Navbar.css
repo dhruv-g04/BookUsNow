@@ -1,70 +1,150 @@
-.upper-navbar {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 10px 20px;
-    background-color: #333;
-    color: white;
+body {
+  font-family: "Inter", sans-serif;
+  color: #989090;
 }
-
+.upper-navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+  /* overflow: auto; */
+}
+/* .lower-navbar::-webkit-scrollbar,
+.upper-navbar::-webkit-scrollbar {
+  display: none;
+} */
 .lower-navbar {
-    display: flex;
-    justify-content:space-between; /* Center the content horizontally */
-    align-items: center;
-    padding: 10px 20px;
-    background-color: #333;
-    color: white;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 20px;
+  overflow: auto;
 }
 
 .logo {
-    font-size: 1.5rem;
+  color: #cf2d2d;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.fixing-icon {
+  margin: 0rem 0.4rem 0 0rem;
 }
 
 .options {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 
-.categories {
-    cursor: pointer;
-    margin-left: 10px; /* Adjust margin to separate from the search bar */
+.categories-box {
+  background-color: black;
+  border-radius: 5px;
+  padding: 10px 15px;
+  color: white;
+  cursor: pointer;
+  margin-left: 10px;
 }
 
 .search-bar input[type="text"] {
-    padding: 5px;
-    width: 200px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-    margin-left: 10px;
+  padding: 10px 15px;
+  width: 30rem;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  margin-left: 10px;
 }
 
 .favorites,
 .signin {
-    cursor: pointer;
-    margin-left: 10px;
+  cursor: pointer;
+  margin-left: 10px;
 }
-
+.signin-text {
+  padding: 10px 15px;
+  border: 1px solid #b0babf;
+  border-radius: 5px;
+}
 .favorites:hover,
 .signin:hover {
-    text-decoration: underline;
+  text-decoration: underline;
+}
+.signin-img {
+  display: none;
 }
 
 .location {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 .categories ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: space-between;
+  gap: 3rem;
 }
 
 .categories ul li {
-    margin-right: 10px;
-    cursor: pointer;
+  cursor: pointer;
 }
 
 .categories ul li:hover {
-    text-decoration: underline;
+  text-decoration: underline;
+}
+
+@media screen and (max-width: 900px) {
+  .search-bar input {
+    display: none;
+  }
+  .categories-box {
+    display: none;
+  }
+  .fav-text {
+    display: none;
+  }
+  .signin-text {
+    display: none;
+  }
+  .signin-img {
+    display: unset;
+    position: absolute;
+    right: 10px;
+  }
+  .fav-icon {
+    position: absolute;
+    right: 32px;
+  }
+  .upper-navbar {
+    position: relative;
+    padding: 10px 10px;
+    /* overflow: auto; */
+  }
+  .search-icon {
+    position: absolute;
+    bottom: 5px;
+    right: 60px;
+  }
+  .lower-navbar {
+    margin-top: -1rem;
+    margin-bottom: -10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    padding: 10px 10px;
+    gap: 15px;
+    overflow: unset;
+  }
+  .categories {
+    width: 100%;
+    overflow: scroll;
+  }
+  .categories ul {
+    gap: 1.5rem;
+  }
+  .categories ul li {
+    text-wrap:nowrap;
+  }
+  .categories::-webkit-scrollbar {
+    display: none;
+  }
 }

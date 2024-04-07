@@ -1,20 +1,43 @@
-.recommended-events{
-    /* background-color: aqua; */
-    transform: translate(0, -250px);
+body{
+  font-family: "Inter", sans-serif;
 }
 
-.recommended-events h4{
-    color: white;
-    font-size: 30px;
-    font-family: 'Inter', sans-serif;
+.box {
+  transform: translate(0, -250px);
+  margin: 3rem;
+}
+.recommended-events {
+  /* background-color: aqua; */
 }
 
-.box{
-    margin: 3rem;
+.recommended-events h4 {
+  color: white;
+  font-size: 30px;
+  font-family: "Inter", sans-serif;
 }
 
-.arrow{
-    /* background-color: aqua; */
-    position: relative;
-    top: 0.3rem;
+.upcoming-events {
+  /* background-color: yellowgreen; */
+  color: #1e2022;
+  font-size: 30px;
+}
+
+
+.arrow {
+  position: relative;
+  top: 0.3rem;
+}
+
+@media screen and (max-width: 900px){
+  .box {
+    transform: translate(0, -320px);
+    margin: 1rem;
+  }
+  .recommended-events h4 {
+    font-size: 17px;
+  }
+  .upcoming-events {
+    font-size: 17px;
+  }
+  
 }
