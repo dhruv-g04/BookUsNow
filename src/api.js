@@ -9,13 +9,14 @@ export const fetchRecommendedEvents = async () => {
     }
   };
   
-export const fetchUpcomingEvents = async () => {
-    try {
-      const response = await fetch('https://gg-backend-assignment.azurewebsites.net/api/Events?code=FOX643kbHEAkyPbdd8nwNLkekHcL4z0hzWBGCd64Ur7mAzFuRCHeyQ==&page=2&type=upcoming');
+export const fetchUpcomingEvents = async (pageNumber) => {
+  try {
+      const response = await fetch(`https://gg-backend-assignment.azurewebsites.net/api/Events?code=FOX643kbHEAkyPbdd8nwNLkekHcL4z0hzWBGCd64Ur7mAzFuRCHeyQ==&page=${pageNumber}&type=upcoming`);
       const data = await response.json();
       return data.events; // Extract the events array from the response data
-    } catch (error) {
+  } catch (error) {
       console.error('Error fetching upcoming events:', error);
       return [];
-    }
+  }
 };
+

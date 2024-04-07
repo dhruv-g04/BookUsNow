@@ -12,17 +12,18 @@ function App() {
     const [recommendedEvents, setRecommendedEvents] = useState([]);
     const [upcomingEvents, setUpcomingEvents] = useState([]);
     const [loading, setLoading] = useState(true);
+    const [pageNumber, setPageNumber] = useState(1); // Initialize the page number
 
     useEffect(() => {
         const fetchData = async () => {
             setLoading(true);
             try {
                 const [recommendedData, upcomingData] = await Promise.all([
-                    fetchRecommended(),
-                    fetchUpcoming()
+                    fetchRecommendedEvents(),
+                    fetchUpcomingEvents(pageNumber) // Pass the page number to the function
                 ]);
                 setRecommendedEvents(recommendedData);
-                setUpcomingEvents(upcomingData);
+                setUpcomingEvents(prevEvents => [...prevEvents, ...upcomingData]); // Merge the new data with existing data
             } catch (error) {
                 console.error('Error fetching data:', error);
             } finally {
@@ -31,28 +32,36 @@ function App() {
         };
 
         fetchData();
-    }, []);
+    }, [pageNumber]); // Add pageNumber as a dependency to trigger the effect when it changes
 
-    const fetchRecommended = async () => {
-        try {
-            const data = await fetchRecommendedEvents();
-            return data;
-        } catch (error) {
-            console.error('Error fetching recommended events:', error);
-            return [];
-        }
-    };
+    useEffect(() => {
+        const sentinelRef = document.getElementById('sentinel');
 
-    const fetchUpcoming = async () => {
-        try {
-            const data = await fetchUpcomingEvents();
-            return data;
-        } catch (error) {
-            console.error('Error fetching upcoming events:', error);
-            return [];
+        const handleIntersect = (entries) => {
+            if (entries[0].isIntersecting) {
+                // Increment the page number and fetch more upcoming events
+                setPageNumber(prevPageNumber => prevPageNumber + 1);
+            }
+        };
+
+        const observer = new IntersectionObserver(handleIntersect, {
+            root: null,
+            rootMargin: '0px',
+            threshold: 1.0 // Trigger when the sentinel element is fully in view
+        });
+
+        if (sentinelRef) {
+            observer.observe(sentinelRef);
         }
-    };
-    // console.log(upcomingEvents);
+
+        // Cleanup function
+        return () => {
+            if (sentinelRef) {
+                observer.unobserve(sentinelRef);
+            }
+        };
+    }, [pageNumber]); // Add pageNumber as a dependency
+
     return (
         <div className="app">
             <NavBar />
@@ -69,6 +78,7 @@ function App() {
                 <div className='upcoming-events'>
                     <h4>Upcoming Events<span className="arrow"><IoIosArrowRoundForward /></span></h4>
                     <EventList events={upcomingEvents} />
+                    <div id="sentinel" style={{ height: '10px' }}></div> {/* Sentinel element */}
                 </div>
                 {loading && <LoadingSpinner />}
             </div>
