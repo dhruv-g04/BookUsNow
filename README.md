@@ -1,70 +1,53 @@
-# Getting Started with Create React App
+# Frontend Developer Internship Assignment
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Live Site
+[Live Site Demo](https://book-us-now-theta.vercel.app/)
 
-## Available Scripts
+## Website Preview
+![alt text](image.png)
+![alt text](image-3.png)
+![alt text](image-4.png)
+## GitHub Repository
+[GitHub Repository](https://github.com/dhruv-g04/BookUsNow)
 
-In the project directory, you can run:
+## Project Overview
+This project aims to build a responsive website for displaying upcoming and recommended events. It fetches events from provided APIs and displays them in a user-friendly manner. The website is designed to work seamlessly on both desktop and mobile screens.
 
-### `npm start`
+## Setup and Local Run Instructions
+To run the project locally, follow these steps:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+#### 1. Clone the Repository
+```bash
+git clone https://github.com/dhruv-g04/BookUsNow
+```
+#### 2. Requirements
+Ensure you have the following requirements installed:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- Node.js
+- React
+- Other dependencies specified in the project's package.json file
 
-### `npm test`
+#### 3. Dependencies
+- react-icons: For including icons in the project
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+#### 4. Run
+Navigate to the project directory and run the following commands:
 
-### `npm run build`
+```bash
+npm install
+npm install react-icon
+npm start
+```
+## Explanation of Design 
+- Responsiveness: The website is designed to adapt to various screen sizes, providing an optimal viewing experience on both desktop and mobile devices.
+- API Integration: Data from the provided APIs is fetched and displayed efficiently, ensuring seamless integration and real-time updates.
+- Horizontal Scrolling: Recommended events are displayed in a horizontally scrollable container, allowing users to easily browse through the events.
+- Lazy Loading: Upcoming events are fetched page by page, with the next page being loaded from the API only when the user scrolls to the end of the page. This ensures optimal performance and reduces unnecessary data fetching.
+-CSS Styling: The project utilizes the specified color scheme and fonts (Font - Inter, Font color - #1E2022, Background color - #ffffff, etc.) to maintain visual consistency and adhere to design guidelines.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Technical Issues Encountered and Decisions Made
+- Lazy Loading Implementation: Implementing lazy loading for fetching upcoming events posed technical challenges due to the asynchronous nature of data fetching and rendering. To overcome this, an IntersectionObserver was used to detect when the user scrolls to the end of the page and trigger the fetching of the next page of events.
+- Data Requirements: Some required information for events, such as card size, was not provided in the initial project requirements. To address this, assumptions were made based on industry standards and best practices. Additionally, any missing information was communicated to stakeholders for clarification and adjustments were made accordingly.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Contributors
+[Dhruv Gupta](https://github.com/dhruv-g04)
