@@ -35,7 +35,7 @@ Navigate to the project directory and run the following commands:
 
 ```bash
 npm install
-npm install react-icon
+npm install react-icons
 npm start
 ```
 ## Explanation of Design 
